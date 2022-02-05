@@ -1,4 +1,5 @@
-const Contact = ({name, email, address, phone, zipCode, city, state}) => {
+const Contact = ({ contact }) => {
+    const { name, address, city, state, zipCode, phone, email } = contact;
     return (
         <li>
             <h2>Name: {name}</h2>
