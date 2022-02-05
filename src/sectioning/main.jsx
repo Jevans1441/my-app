@@ -1,4 +1,5 @@
 import Contact from "../components/contact"
+import ContactForm from "../components/contactForm";
 import { mockResponse } from "../utlis/mockResponse"
 
 const Main = () => {
@@ -7,14 +8,15 @@ const Main = () => {
         return (
             <Contact contact={contact} key={index} />
         )
-       });
+    });
 
 
     return (
         <>
+            <ContactForm />
             <ul>{contacts}</ul>
         </>
-    )
-}
+    );
+};
 
 export default Main
