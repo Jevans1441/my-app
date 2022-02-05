@@ -1,5 +1,4 @@
 import Contact from "../components/contact"
-import Counter from "../components/counter";
 import { mockResponse } from "../utlis/mockResponse"
 
 const Main = () => {
@@ -13,7 +12,6 @@ const Main = () => {
 
     return (
         <>
-            <Counter />
             <ul>{contacts}</ul>
         </>
     )
