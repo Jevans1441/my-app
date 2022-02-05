@@ -25,3 +25,7 @@ footer {
 ul {
   list-style-type: none;
 }
+
+.counterButton {
+  width: 40px;
+}
