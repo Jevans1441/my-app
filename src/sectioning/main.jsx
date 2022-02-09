@@ -13,7 +13,7 @@ const Main = () => {
     //     email: ''
     // });
 
-    const [fields, setFields] = useState();
+    const [fields, setFields] = useState([]);
 
     // const handleSubmit = (e, name, address, zipCode, phone, email) => {
     //     e.preventDefault();
@@ -22,14 +22,35 @@ const Main = () => {
 
     const handleSubmit = (e, contactFields) => {
         e.preventDefault();
-        setFields(contactFields)
+        const updatedContacts = [...fields, contactFields]
+        setFields(updatedContacts)
     }
+
+    const newContacts = fields.map((contact, index) => {
+        return (
+             <Contact contact={contact} key={index} />
+        )
+    })
 
     const contacts = response.map((contact, index) => {
         return (
             <Contact contact={contact} key={index} />
         )
     });
+
+
+    return (
+        <>
+            <ContactForm action={handleSubmit} />
+            
+             <ul>
+                { newContacts }
+            </ul>
+            
+            <ul>{contacts}</ul>
+        </>
+    )
+
 
 
     // return (
@@ -57,18 +78,6 @@ const Main = () => {
     //             </ul>
     //     </>
     // );
-
-    return (
-        <>
-            <ContactForm action={handleSubmit} />
-            
-             <ul>
-                { fields && <Contact contact={fields} /> }
-            </ul>
-            
-            <ul>{contacts}</ul>
-        </>
-    )
 };
 
 export default Main
