@@ -22,7 +22,7 @@ const Main = () => {
 
     const handleSubmit = (e, contactFields) => {
         e.preventDefault();
-        setFields()
+        setFields(contactFields)
     }
 
     const contacts = response.map((contact, index) => {
@@ -61,10 +61,12 @@ const Main = () => {
     return (
         <>
             <ContactForm action={handleSubmit} />
-        
-            <ul>
-                {contacts}
+            
+             <ul>
+                { fields && <Contact contact={fields} /> }
             </ul>
+            
+            <ul>{contacts}</ul>
         </>
     )
 };
