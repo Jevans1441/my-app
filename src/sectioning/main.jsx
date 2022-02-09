@@ -42,11 +42,7 @@ const Main = () => {
     return (
         <>
             <ContactForm action={handleSubmit} />
-            
-             <ul>
-                { newContacts }
-            </ul>
-            
+            <ul>{newContacts}</ul>
             <ul>{contacts}</ul>
         </>
     )
