@@ -5,18 +5,25 @@ import { mockResponse } from "../utlis/mockResponse"
 
 const Main = () => {
     const response = mockResponse();
-    const [fields, setFields] = useState({
-        name: '',
-        address: '',
-        zipCode: '',
-        phone: '',
-        email: ''
-    });
+    // const [fields, setFields] = useState({
+    //     name: '',
+    //     address: '',
+    //     zipCode: '',
+    //     phone: '',
+    //     email: ''
+    // });
 
-    const handleSubmit = (e, name, address, zipCode, phone, email) => {
+    const [fields, setFields] = useState();
+
+    // const handleSubmit = (e, name, address, zipCode, phone, email) => {
+    //     e.preventDefault();
+    //     setFields({ name, address, zipCode, phone, email });
+    // };
+
+    const handleSubmit = (e, contactFields) => {
         e.preventDefault();
-        setFields({ name, address, zipCode, phone, email });
-    };
+        setFields()
+    }
 
     const contacts = response.map((contact, index) => {
         return (
@@ -25,31 +32,41 @@ const Main = () => {
     });
 
 
+    // return (
+    //     <>
+    //         <ContactForm action={handleSubmit} />
+    //         <li>
+    //             <h2>
+    //                 {fields.name}
+    //             </h2>
+    //             <p>
+    //                 {fields.address}
+    //             </p>
+    //             <p>
+    //                 {fields.zipCode}
+    //             </p>
+    //             <p>
+    //                 {fields.phone}
+    //             </p>
+    //             <p>
+    //                 {fields.email}
+    //             </p>
+    //         </li>
+    //             <ul>
+    //                 {contacts}
+    //             </ul>
+    //     </>
+    // );
+
     return (
         <>
             <ContactForm action={handleSubmit} />
-            <li>
-                <h2>
-                    {fields.name}
-                </h2>
-                <p>
-                    {fields.address}
-                </p>
-                <p>
-                    {fields.zipCode}
-                </p>
-                <p>
-                    {fields.phone}
-                </p>
-                <p>
-                    {fields.email}
-                </p>
-            </li>
-                <ul>
-                    {contacts}
-                </ul>
+        
+            <ul>
+                {contacts}
+            </ul>
         </>
-    );
+    )
 };
 
 export default Main
