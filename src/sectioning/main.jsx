@@ -3,21 +3,21 @@ import Contact from "../components/contact"
 import ContactForm from "../components/contactForm";
 import { mockResponse } from "../utlis/mockResponse"
 import { Route, Routes } from "react-router-dom";
+import Modal from "../components/modal";
+import { render } from "@testing-library/react";
 
 const Main = () => {
-    const response = mockResponse();
-
     const [fields, setFields] = useState([]);
+    const [isShowModal, setIsShowModal] = useState(false)
 
     useEffect(() => {
         setFields(mockResponse())
     }, []);
 
-    const handleSubmit = (e, contactFields) => {
-        e.preventDefault();
+    const handleSubmit = (contactFields) => {
         const updatedContacts = [...fields, contactFields]
         setFields(updatedContacts)
-
+        setIsShowModal(true)
     };
 
     const contacts = fields.map((contact, index) => {
@@ -34,6 +34,7 @@ const Main = () => {
                 <Route path="list" element={<ul>{contacts}</ul>} />
                 <Route path="*" element={<h1>Error 404</h1>} />
             </Routes>
+            {isShowModal && <Modal message="Contact added" />}
         </>            
     );
 };

@@ -12,10 +12,15 @@ const ContactForm = ({ action }) => {
         setContact(updatedContact)
     }
 
+    const handleReset = (e) => {
+        e.preventDefault();
+        action(contact);
+        setContact({})
+    }
 
     return (
         // <form onSubmit={(e) => action(e, name, address, zipCode, phone, email)}>
-        <form onSubmit={(e) => action(e, contact)}>
+        <form onSubmit={handleReset}>
             <label>
                 <span>Full name</span>
                 {/* <input onChange={handleNameChange} value={name} /> */}
