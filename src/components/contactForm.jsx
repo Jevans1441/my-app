@@ -1,37 +1,5 @@
 import { useState } from "react";
 
-// const ContactForm = ({ action }) => {
-//     const [name, setName] = useState('');
-//     const [address, setAddress] = useState('')
-//     const [zipCode, setZipCode] = useState('')
-//     const [phone, setPhone] = useState('')
-//     const [email, setEmail] = useState('')
-    
-//     const handleNameChange = (e) => {
-//         const target = e.target.value;
-//         setName(target)
-//     };
-
-//     const handleAddressChange = (e) => {
-//         const target = e.target.value;
-//         setAddress(target)
-//     };
-
-//     const handleZipChange = (e) => {
-//         const target = e.target.value;
-//         setZipCode(target)
-//     };
-    
-//     const handlePhoneChange = (e) => {
-//         const target = e.target.value;
-//         setPhone(target)
-//     };
-    
-//     const handleEmailChange = (e) => {
-//         const target = e.target.value;
-//         setEmail(target)
-//     };
-
 const ContactForm = ({ action }) => {
 
     const [contact, setContact] = useState({})
