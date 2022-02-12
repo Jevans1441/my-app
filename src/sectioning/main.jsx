@@ -4,7 +4,7 @@ import ContactForm from "../components/contactForm";
 import { mockResponse } from "../utlis/mockResponse"
 import { Route, Routes } from "react-router-dom";
 import Modal from "../components/modal";
-import { render } from "@testing-library/react";
+
 
 const Main = () => {
     const [fields, setFields] = useState([]);
@@ -34,7 +34,7 @@ const Main = () => {
                 <Route path="list" element={<ul>{contacts}</ul>} />
                 <Route path="*" element={<h1>Error 404</h1>} />
             </Routes>
-            {isShowModal && <Modal message="Contact added" />}
+            {isShowModal && <Modal message="Contact added" handleCloseModal={setIsShowModal} />}
         </>            
     );
 };

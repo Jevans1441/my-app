@@ -1,6 +1,6 @@
-const Modal = ({ message }) => {
+const Modal = ({ message, handleCloseModal }) => {
     return (
-        <div className="modal">{message}</div>
+        <div className="modal" onClick={() => handleCloseModal(false)} >{message}</div>
     )
 };
 
