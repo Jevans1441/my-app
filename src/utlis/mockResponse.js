@@ -4,6 +4,7 @@ export const mockResponse = () => {
   let response = [];
   for (let i = 0; i < 10; i++) {
     const contact = {};
+    contact.id = faker.datatype.uuid();
     contact.name = faker.name.findName();
     contact.address = faker.address.streetAddress();
     contact.email = faker.internet.email();

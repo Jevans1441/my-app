@@ -1,4 +1,4 @@
-const Contact = ({ contact }) => {
+const ContactDetail = ({ contact }) => {
     const { name, address, city, state, zipCode, phone, email } = contact;
     return (
         <li>
@@ -12,4 +12,4 @@ const Contact = ({ contact }) => {
     )
 };
 
-export default Contact;
+export default ContactDetail;
