@@ -21,7 +21,6 @@ const Main = () => {
         setIsShowModal(true)
     };
 
-
     return (
         <>
             <Routes>

@@ -1,13 +1,19 @@
 import Contact from "./contact";
 
-const ContactSummary = ({fields}) => {
+const ContactSummary = ({ fields }) => {
+    
+    const handleClick = (e) => {
+        const target = e.target;
+        console.log(target)
+    };
+
    const contacts = fields.map((contact, index) => {
        return <li key={index}>{contact.name}</li>
     });
    
     return (
-        <ul>{contacts}</ul>
-    )
+        <ul onClick={handleClick} data-keyname="" >{contacts}</ul>
+    );
 };
 
 export default ContactSummary;
