@@ -2,12 +2,13 @@ import { useEffect, useState } from "react";
 import ContactDetail from "../components/contactDetail"
 import ContactForm from "../components/contactForm";
 import { mockResponse } from "../utlis/mockResponse"
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import Modal from "../components/modal";
 import ContactSummary from "../components/contactSummary";
 
 
 const Main = () => {
+    const navigate = useNavigate()
     const [fields, setFields] = useState([]);
     const [isShowModal, setIsShowModal] = useState(false)
     const [selectedContact, setSelectedContact] = useState(null)
@@ -30,7 +31,13 @@ const Main = () => {
         setSelectedContact(selectedContact[0]);
     };
 
-    
+    const handleDelete = (id) => {
+        const updatedContacts = fields.filter(field => field.id !== id);
+        setFields(updatedContacts)
+        setSelectedContact(null)
+        navigate('/list')
+
+    };
 
     return (
         <>
@@ -38,7 +45,7 @@ const Main = () => {
                 <Route path="/" element={<h1>Welcome to the Contact App</h1>} />
                 <Route path="add" element={<ContactForm action={handleSubmit} />} />
                 <Route path="list" element={<ContactSummary action={handleClick} fields={fields} />}>
-                    <Route path=":id" element={<ContactDetail selectedContact={selectedContact} />} />
+                    {selectedContact && <Route path=":id" element={<ContactDetail action={handleDelete} selectedContact={selectedContact} />} />}
                 </Route>
                 <Route path="*" element={<h1>Page not Found</h1>} />
             </Routes>
@@ -48,5 +55,3 @@ const Main = () => {
 };
 
 export default Main
-
-// put delete button on each detail, after on click event to show contactDetail 
