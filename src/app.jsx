@@ -6,11 +6,11 @@ import './app.css';
 
 function App() {
   return (
-    <div className='y-wrap' >
+    <>
       <Header />
       <Main />
       <Footer />
-    </div>  
+    </>  
   );
 }
 
