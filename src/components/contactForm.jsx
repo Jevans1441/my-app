@@ -21,42 +21,64 @@ const ContactForm = ({ action }) => {
     return (
         // <form onSubmit={(e) => action(e, name, address, zipCode, phone, email)}>
         <form onSubmit={handleReset}>
-            <label>
-                <span>Full name</span>
-                {/* <input onChange={handleNameChange} value={name} /> */}
-                <input onChange={handleChange} data-keyname="name" value={contact.name || ''} />
-            </label>
-            <label>
-                <span>Address</span>
-                {/* <input onChange={handleAddressChange} value={address}></input> */}
-                <input onChange={handleChange} data-keyname="address" value={contact.address || ''}></input>
-            </label>
-            <label>
-                <span>City</span>
-                {/* <input onChange={handleAddressChange} value={address}></input> */}
-                <input onChange={handleChange} data-keyname="city" value={contact.city || ''}></input>
-            </label>
-            <label>
-                <span>State</span>
-                {/* <input onChange={handleAddressChange} value={address}></input> */}
-                <input onChange={handleChange} data-keyname="state" value={contact.state || ''}></input>
-            </label>
-            <label>
-                <span>Zip Code</span>
+
+            <div className="contact-field">
+                <label>
+                    <span className="label-name">Full name</span>
+                    {/* <input onChange={handleNameChange} value={name} /> */}
+                    <input onChange={handleChange} data-keyname="name" value={contact.name || ''} />
+                </label>
+            </div>
+
+            <div className="contact-field">
+                <label>
+                    <span className="label-name">Address</span>
+                    {/* <input onChange={handleAddressChange} value={address}></input> */}
+                    <input onChange={handleChange} data-keyname="address" value={contact.address || ''}></input>
+                </label>
+            </div>
+            
+            <div className="contact-field">
+                <label>
+                    <span className="label-name">City</span>
+                    {/* <input onChange={handleAddressChange} value={address}></input> */}
+                    <input onChange={handleChange} data-keyname="city" value={contact.city || ''}></input>
+                </label>
+            </div>
+            
+            <div className="contact-field">
+                <label>
+                    <span className="label-name">State</span>
+                    {/* <input onChange={handleAddressChange} value={address}></input> */}
+                    <input onChange={handleChange} data-keyname="state" value={contact.state || ''}></input>
+                </label>
+            </div>
+                
+            <div className="contact-field">
+                <label>
+                    <span className="label-name">Zip Code</span>
                 {/* <input onChange={handleZipChange} value={zipCode}></input> */}
-                <input onChange={handleChange} data-keyname="zipCode" value={contact.zipCode || ''}></input>
-            </label>
-            <label>
-                <span>Phone</span>
-                {/* <input onChange={handlePhoneChange} value={phone}></input> */}
-                <input onChange={handleChange} data-keyname="phone" value={contact.phone || ''}></input>
-            </label>
-            <label>
-                <span>Email</span>
-                {/* <input onChange={handleEmailChange} value={email}></input> */}
-                <input onChange={handleChange} data-keyname="email" value={contact.email || ''}></input>
-            </label>
-            <button type="submit">Submit</button>
+                    <input onChange={handleChange} data-keyname="zipCode" value={contact.zipCode || ''}></input>
+                </label>
+            </div>
+                
+            <div className="contact-field">
+                <label>
+                    <span className="label-name">Phone</span>
+                    {/* <input onChange={handlePhoneChange} value={phone}></input> */}
+                    <input onChange={handleChange} data-keyname="phone" value={contact.phone || ''}></input>
+                </label>
+            </div>
+                
+            <div className="contact-field">
+                <label>
+                    <span className="label-name">Email</span>
+                    {/* <input onChange={handleEmailChange} value={email}></input> */}
+                    <input onChange={handleChange} data-keyname="email" value={contact.email || ''}></input>
+                </label>
+            </div>
+                
+            <button class="btn" type="submit">Submit</button>
 
         </form>
     );
