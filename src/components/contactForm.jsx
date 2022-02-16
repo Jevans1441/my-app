@@ -18,6 +18,9 @@ const ContactForm = ({ action }) => {
         setContact({})
     }
 
+        const removeItem = (e) => {
+    };
+
     return (
         // <form onSubmit={(e) => action(e, name, address, zipCode, phone, email)}>
         <form onSubmit={handleReset}>

@@ -12,7 +12,7 @@ const ContactSummary = ({ fields, action }) => {
    
     return (
         <>
-        <ul className="contacts" onClick={action}>{contacts}</ul>
+        <ul className="contacts" onClick={action}>{contacts} </ul> 
             <Outlet />
         </>
     );

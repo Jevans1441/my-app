@@ -30,6 +30,8 @@ const Main = () => {
         setSelectedContact(selectedContact[0]);
     };
 
+    
+
     return (
         <>
             <Routes>
@@ -46,3 +48,5 @@ const Main = () => {
 };
 
 export default Main
+
+// put delete button on each detail, after on click event to show contactDetail 
