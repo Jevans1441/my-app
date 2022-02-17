@@ -112,3 +112,12 @@ nav a {
   background-color: rgb(170, 165, 165);
   margin-top: 25px;
 }
+
+.policy-list {
+  list-style-type: circle;
+}
+
+.policy-link {
+  text-decoration: none;
+  color: black;
+}

@@ -5,6 +5,7 @@ import { mockResponse } from "../utlis/mockResponse"
 import { Route, Routes, useNavigate } from "react-router-dom";
 import Modal from "../components/modal";
 import ContactSummary from "../components/contactSummary";
+import PrivacyPolicy from "../components/privacyPolicy";
 
 
 const Main = () => {
@@ -49,6 +50,7 @@ const Main = () => {
                         {selectedContact && <Route path=":id" element={<ContactDetail action={handleDelete} selectedContact={selectedContact} />} />}
                     </Route>
                     <Route path="*" element={<h1>Page not Found</h1>} />
+                    <Route path="PrivacyPolicy" element={<PrivacyPolicy />} />
                 </Routes>
                 {isShowModal && <Modal message="Contact added" handleCloseModal={setIsShowModal} />}
             </div>  
