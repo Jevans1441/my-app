@@ -1,7 +1,7 @@
 const PrivacyPolicy = () => {
   return (
     <div>
-      <h2>Our Privacy Policy</h2>
+      <h2 className="privacy-header">Our Privacy Policy</h2>
       <p>
         Last updated: February 17, 2022 This Privacy Policy describes Our
         policies and procedures on the collection, use and disclosure of Your
