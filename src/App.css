@@ -121,3 +121,17 @@ nav a {
   text-decoration: none;
   color: black;
 }
+
+.contactBtn {
+  padding: 5px;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+.dogImg {
+  width: 300px;
+}
+
+.dogImg img {
+  width: auto;
+}

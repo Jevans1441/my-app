@@ -12,6 +12,7 @@ export const mockResponse = () => {
     contact.zipCode = faker.address.zipCode();
     contact.phone = faker.phone.phoneNumber();
     contact.state = faker.address.state();
+    contact.dogName = faker.name.firstName();
     response.push(contact);
   }
   return response;

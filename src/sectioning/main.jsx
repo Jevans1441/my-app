@@ -9,10 +9,10 @@ import PrivacyPolicy from "../components/privacyPolicy";
 
 
 const Main = () => {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     const [fields, setFields] = useState([]);
-    const [isShowModal, setIsShowModal] = useState(false)
-    const [selectedContact, setSelectedContact] = useState(null)
+    const [isShowModal, setIsShowModal] = useState(false);
+    const [selectedContact, setSelectedContact] = useState(null);
 
     useEffect(() => {
         setFields(mockResponse())
