@@ -93,10 +93,6 @@ nav a {
   margin-left: 15px;
 }
 
-.list {
-  margin-top: 40px;
-}
-
 .contact-field {
   margin: 16px 0;
 }
@@ -122,16 +118,36 @@ nav a {
   color: black;
 }
 
-.contactBtn {
-  padding: 5px;
-  margin-top: 5px;
+.btn.btn--multiples {
+  padding: 5px 5px;
+  margin-top: 8px;
   margin-right: 5px;
+  cursor: pointer;
 }
 
 .dogImg {
-  width: 300px;
+  width: 100%;
+  margin: 6px 0;
 }
 
 .dogImg img {
-  width: auto;
+  width: 100%;
+}
+
+.contacts li {
+  margin: 5px 0;
+}
+
+.y-contact {
+  display: flex;
+  justify-content: space-between;
+}
+
+.y-minWidth {
+  flex: 0 0 50%;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-between;
 }

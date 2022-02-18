@@ -42,7 +42,7 @@ const Main = () => {
 
     return (
         <main>
-            <div className="y-wrap">
+            <div className="y-wrap y-contact">
                 <Routes>
                     <Route path="/" element={<h1>Welcome to the Contact App</h1>} />
                     <Route path="add" element={<ContactForm action={handleSubmit} />} />
