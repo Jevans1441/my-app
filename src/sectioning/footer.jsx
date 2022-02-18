@@ -7,7 +7,7 @@ const Footer = () => {
                 <NavLink className="policy-link" to='/PrivacyPolicy'>Privacy Policy</NavLink>
             </div>
         </footer>
-    )
-}
+    );
+};
 
 export default Footer

@@ -113,7 +113,7 @@ nav a {
   margin-top: 25px;
 }
 
-.policy-list {
+.policy-list li {
   list-style-type: circle;
 }
 
