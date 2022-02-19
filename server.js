@@ -25,13 +25,14 @@ server.get("/heartbeat", (req, res) => {
 
 server.post("/location", (req, res) => {
   const { address } = req.body;
-
+  console.log(address);
   geocoder
     .geocode(address)
     .then((response) => {
       res.json({ response });
     })
     .catch((err) => {
+      console.log(err);
       res.json({ err });
     });
 });

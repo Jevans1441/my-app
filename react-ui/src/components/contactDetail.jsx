@@ -6,11 +6,23 @@ const ContactDetail = ({ selectedContact, action }) => {
 
   const [dogPic, setDogPic] = useState(null);
 
-  const handleDogClick = () => {
-    fetch("https://dog.ceo/api/breeds/image/random")
-      .then((Response) => Response.json())
-      .then((data) => setDogPic(data.message));
+  const hardCodedAddress = {"address": "110 pinyon pine circle, athens, ga"}
+
+  const options = {
+    method: 'POST',
+    Headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(hardCodedAddress)
   };
+
+
+  const handleGetGeo = () => {
+    fetch("http://127.0.0.1:8080/location", options)
+      .then((Response) => Response.json())
+      .then((data) => console.log(data));
+  };
+
 
   return (
     <>
@@ -28,13 +40,12 @@ const ContactDetail = ({ selectedContact, action }) => {
             <button className="btn btn--multiples" onClick={() => action(id)}>
               Delete Contact
             </button>
-            <button className="btn btn--multiples" onClick={handleDogClick}>
-              Dog Pic
+            <button className="btn btn--multiples" onClick={handleGetGeo}>
+              Get Geo Coordinates
             </button>
           </div>
           <div>
             <img className="dogImg" src={dogPic} />
-            <p>{dogName}</p>
           </div>
         </li>
       )}
