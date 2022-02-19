@@ -1,16 +1,39 @@
+// libraries
 require("dotenv").config();
 const express = require("express");
 const path = require("path");
-const server = express();
+const Geocodio = require("geocodio-library-node");
+const { PORT, API_KEY } = process.env;
+
+// server path
 const hostname = "127.0.0.1";
-const { PORT } = process.env;
 
+// instantiations
+const geocoder = new Geocodio(API_KEY);
+const server = express();
+
+// middleware
 server.use(express.static(path.resolve(__dirname + "/react-ui/build")));
+server.use(express.json());
 
+// endpoints
 server.get("/heartbeat", (req, res) => {
   res.json({
     is: "working",
   });
+});
+
+server.post("/location", (req, res) => {
+  const { address } = req.body;
+
+  geocoder
+    .geocode(address)
+    .then((response) => {
+      res.json({ response });
+    })
+    .catch((err) => {
+      res.json({ err });
+    });
 });
 
 server.get("*", (req, res) => {
