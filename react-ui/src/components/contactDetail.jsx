@@ -6,7 +6,7 @@ const ContactDetail = ({ selectedContact, action }) => {
 
   const [dogPic, setDogPic] = useState(null);
 
-  const hardCodedAddress = {"address": "110 pinyon pine circle, athens, ga"}
+  const hardCodedAddress = {"address": "1109 N Highland St, Arlington VA"}
 
   const options = {
     method: 'POST',
